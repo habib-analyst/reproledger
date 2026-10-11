@@ -1,0 +1,40 @@
+{
+  "reproledger": "1.0",
+  "name": "forge-tests",
+  "title": "forge test suite",
+  "author": {
+    "name": "Habib Ur Rehman",
+    "url": "https://github.com/habib-analyst"
+  },
+  "code": {
+    "repo": "https://github.com/habib-analyst/forge",
+    "commit": "74a4ea79ba63a98794c88f5c07e17e9e2826e1ca",
+    "subdir": "."
+  },
+  "data": [],
+  "environment": {
+    "python": ">=3.10",
+    "setup": "pip install -q -e . pytest",
+    "os": "linux-x86_64",
+    "cpu_only": true
+  },
+  "command": "repro pytest tests/ -q",
+  "metrics_file": "repro_metrics.json",
+  "metrics": {
+    "tests_passed": {
+      "expected": 14,
+      "tolerance": 0,
+      "compare": "ge"
+    },
+    "tests_failed": {
+      "expected": 0,
+      "tolerance": 0,
+      "compare": "le"
+    }
+  },
+  "timeout_s": 1800,
+  "hardware": {
+    "gpu_required": false
+  },
+  "notes": "Verifier needs the repro CLI on PATH (pip install reproledger). Test-function count at pinned commit is 14 (author-counted); awaiting independent verification."
+}

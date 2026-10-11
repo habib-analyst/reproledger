@@ -1,0 +1,40 @@
+{
+  "reproledger": "1.0",
+  "name": "robocorrupt-bench-tests",
+  "title": "robocorrupt-bench test suite \u2014 6/6",
+  "author": {
+    "name": "Habib Ur Rehman",
+    "url": "https://github.com/habib-analyst"
+  },
+  "code": {
+    "repo": "https://github.com/habib-analyst/robocorrupt-bench",
+    "commit": "3570e55fc6dd4a952ca526518e513ca3f68f176a",
+    "subdir": "."
+  },
+  "data": [],
+  "environment": {
+    "python": ">=3.10",
+    "setup": "pip install -q -r requirements.txt pytest",
+    "os": "linux-x86_64",
+    "cpu_only": true
+  },
+  "command": "repro pytest tests/ -q",
+  "metrics_file": "repro_metrics.json",
+  "metrics": {
+    "tests_passed": {
+      "expected": 6,
+      "tolerance": 0,
+      "compare": "ge"
+    },
+    "tests_failed": {
+      "expected": 0,
+      "tolerance": 0,
+      "compare": "le"
+    }
+  },
+  "timeout_s": 1800,
+  "hardware": {
+    "gpu_required": false
+  },
+  "notes": "Verifier needs the repro CLI on PATH (pip install reproledger). Corruption-benchmark tests; installs torch CPU + pybullet (~20s suite). 6/6 measured 2026-10-11."
+}

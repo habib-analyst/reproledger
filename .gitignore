@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+dist/
+build/
+repro_metrics.json
+attestation-*.json
+recipe.json
+.DS_Store

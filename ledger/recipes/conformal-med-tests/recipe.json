@@ -1,0 +1,40 @@
+{
+  "reproledger": "1.0",
+  "name": "conformal-med-tests",
+  "title": "conformal-med test suite \u2014 10/10",
+  "author": {
+    "name": "Habib Ur Rehman",
+    "url": "https://github.com/habib-analyst"
+  },
+  "code": {
+    "repo": "https://github.com/habib-analyst/conformal-med",
+    "commit": "b43372bb08eeb3cafbe34c054cf1d102aaf6041b",
+    "subdir": "."
+  },
+  "data": [],
+  "environment": {
+    "python": ">=3.10",
+    "setup": "pip install -q -e . pytest",
+    "os": "linux-x86_64",
+    "cpu_only": true
+  },
+  "command": "repro pytest tests/ -q",
+  "metrics_file": "repro_metrics.json",
+  "metrics": {
+    "tests_passed": {
+      "expected": 10,
+      "tolerance": 0,
+      "compare": "ge"
+    },
+    "tests_failed": {
+      "expected": 0,
+      "tolerance": 0,
+      "compare": "le"
+    }
+  },
+  "timeout_s": 1800,
+  "hardware": {
+    "gpu_required": false
+  },
+  "notes": "Verifier needs the repro CLI on PATH (pip install reproledger). Conformal prediction tests; pulls torch CPU (~200MB). 10/10 measured 2026-10-10."
+}

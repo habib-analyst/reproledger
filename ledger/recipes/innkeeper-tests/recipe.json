@@ -1,0 +1,40 @@
+{
+  "reproledger": "1.0",
+  "name": "innkeeper-tests",
+  "title": "innkeeper test suite \u2014 21/21",
+  "author": {
+    "name": "Habib Ur Rehman",
+    "url": "https://github.com/habib-analyst"
+  },
+  "code": {
+    "repo": "https://github.com/habib-analyst/innkeeper",
+    "commit": "8b37a48fd042ff2e989d8092b19581ff2fe11bb8",
+    "subdir": "."
+  },
+  "data": [],
+  "environment": {
+    "python": ">=3.10",
+    "setup": "pip install -q -e . pytest",
+    "os": "linux-x86_64",
+    "cpu_only": true
+  },
+  "command": "repro pytest tests/ -q",
+  "metrics_file": "repro_metrics.json",
+  "metrics": {
+    "tests_passed": {
+      "expected": 21,
+      "tolerance": 0,
+      "compare": "ge"
+    },
+    "tests_failed": {
+      "expected": 0,
+      "tolerance": 0,
+      "compare": "le"
+    }
+  },
+  "timeout_s": 1800,
+  "hardware": {
+    "gpu_required": false
+  },
+  "notes": "Verifier needs the repro CLI on PATH (pip install reproledger). AI-innkeeper sim-scenario tests. 21/21 measured 2026-10-11."
+}

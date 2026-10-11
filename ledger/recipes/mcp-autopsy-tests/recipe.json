@@ -1,0 +1,40 @@
+{
+  "reproledger": "1.0",
+  "name": "mcp-autopsy-tests",
+  "title": "mcp-autopsy test suite \u2014 7/7",
+  "author": {
+    "name": "Habib Ur Rehman",
+    "url": "https://github.com/habib-analyst"
+  },
+  "code": {
+    "repo": "https://github.com/habib-analyst/mcp-autopsy",
+    "commit": "aeda75200885b24cb03c5b42f5a46e65c9ed558d",
+    "subdir": "."
+  },
+  "data": [],
+  "environment": {
+    "python": ">=3.10",
+    "setup": "pip install -q -e . pytest",
+    "os": "linux-x86_64",
+    "cpu_only": true
+  },
+  "command": "repro pytest tests/ -q",
+  "metrics_file": "repro_metrics.json",
+  "metrics": {
+    "tests_passed": {
+      "expected": 7,
+      "tolerance": 0,
+      "compare": "ge"
+    },
+    "tests_failed": {
+      "expected": 0,
+      "tolerance": 0,
+      "compare": "le"
+    }
+  },
+  "timeout_s": 1800,
+  "hardware": {
+    "gpu_required": false
+  },
+  "notes": "Verifier needs the repro CLI on PATH (pip install reproledger). MCP tool-call autopsy tests. 7/7 measured 2026-10-10."
+}

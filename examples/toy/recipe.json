@@ -1,0 +1,38 @@
+{
+  "author": {
+    "name": "reproledger demo",
+    "url": "https://github.com/habib-analyst/reproledger"
+  },
+  "code": {
+    "commit": "0000000000000000000000000000000000000000",
+    "repo": "https://github.com/habib-analyst/reproledger",
+    "subdir": "."
+  },
+  "command": "repro pytest . -q",
+  "data": [],
+  "environment": {
+    "python": ">=3.10",
+    "setup": "pip install -q pytest"
+  },
+  "hardware": {
+    "gpu_required": false
+  },
+  "metrics": {
+    "tests_failed": {
+      "compare": "le",
+      "expected": 0,
+      "tolerance": 0
+    },
+    "tests_passed": {
+      "compare": "ge",
+      "expected": 2,
+      "tolerance": 0
+    }
+  },
+  "metrics_file": "repro_metrics.json",
+  "name": "toy-demo",
+  "notes": "Demo recipe. The commit is a placeholder: run with --no-clone against a local dir containing test_toy.py, e.g. repro verify recipe.json --no-clone --workdir /tmp/toydemo with /tmp/toydemo/code/test_toy.py present.",
+  "reproledger": "1.0",
+  "timeout_s": 300,
+  "title": "Toy demo recipe (2 tests)"
+}

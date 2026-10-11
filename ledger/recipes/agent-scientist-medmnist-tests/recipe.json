@@ -1,0 +1,40 @@
+{
+  "reproledger": "1.0",
+  "name": "agent-scientist-medmnist-tests",
+  "title": "agent-scientist-medmnist test suite \u2014 11/11",
+  "author": {
+    "name": "Habib Ur Rehman",
+    "url": "https://github.com/habib-analyst"
+  },
+  "code": {
+    "repo": "https://github.com/habib-analyst/agent-scientist-medmnist",
+    "commit": "27611f223230118295e587d714dbeb5c0c3d9b04",
+    "subdir": "."
+  },
+  "data": [],
+  "environment": {
+    "python": ">=3.10",
+    "setup": "pip install -q -e . pytest",
+    "os": "linux-x86_64",
+    "cpu_only": true
+  },
+  "command": "repro pytest tests/ -q",
+  "metrics_file": "repro_metrics.json",
+  "metrics": {
+    "tests_passed": {
+      "expected": 11,
+      "tolerance": 0,
+      "compare": "ge"
+    },
+    "tests_failed": {
+      "expected": 0,
+      "tolerance": 0,
+      "compare": "le"
+    }
+  },
+  "timeout_s": 1800,
+  "hardware": {
+    "gpu_required": false
+  },
+  "notes": "Verifier needs the repro CLI on PATH (pip install reproledger). CPU smoke tests of the agent-scientist loop. 11/11 measured 2026-10-08."
+}

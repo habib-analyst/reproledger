@@ -1,0 +1,40 @@
+{
+  "reproledger": "1.0",
+  "name": "benchshield-tests",
+  "title": "benchshield test suite \u2014 13/13 integrity probes",
+  "author": {
+    "name": "Habib Ur Rehman",
+    "url": "https://github.com/habib-analyst"
+  },
+  "code": {
+    "repo": "https://github.com/habib-analyst/benchshield",
+    "commit": "98c982f55edde9052f8f028a9d0b4c7fbb7986f6",
+    "subdir": "."
+  },
+  "data": [],
+  "environment": {
+    "cpu_only": true,
+    "os": "linux-x86_64",
+    "python": ">=3.10",
+    "setup": "pip install -q -e . pytest"
+  },
+  "command": "repro pytest tests/ -q",
+  "metrics_file": "repro_metrics.json",
+  "metrics": {
+    "tests_failed": {
+      "expected": 0,
+      "tolerance": 0,
+      "compare": "le"
+    },
+    "tests_passed": {
+      "expected": 13,
+      "tolerance": 0,
+      "compare": "ge"
+    }
+  },
+  "timeout_s": 900,
+  "hardware": {
+    "gpu_required": false
+  },
+  "notes": "Verifier needs the repro CLI on PATH (pip install reproledger). repro verify runs setup in a fresh venv, so bare pip install is safe. Full 13-test suite: seed-spread, cherry-pick (TPR 0.90/FPR 0.05) and contamination probes. Verified 2026-10-11: 13 passed in 1.83s on CPU."
+}
